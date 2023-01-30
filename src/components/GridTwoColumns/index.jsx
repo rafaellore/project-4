@@ -4,7 +4,9 @@ import { SectionBackground } from '../SectionBackground';
 import { Heading } from '../Heading';
 import { Text } from '../Text';
 
-export const GridTwoColumns = ({ title, text, srcImg, background = false }) => {
+export const GridTwoColumns = ({ title, text, image, background = false }) => {
+  const { data } = image;
+
   return (
     <SectionBackground background={background}>
       <Styled.Container background={background}>
@@ -15,7 +17,7 @@ export const GridTwoColumns = ({ title, text, srcImg, background = false }) => {
           <Text>{text}</Text>
         </Styled.TextContainer>
         <Styled.ImageContainer>
-          <Styled.Image src={srcImg} alt={title} />
+          <Styled.Image src={data?.attributes?.url} alt={title} />
         </Styled.ImageContainer>
       </Styled.Container>
     </SectionBackground>
@@ -25,6 +27,6 @@ export const GridTwoColumns = ({ title, text, srcImg, background = false }) => {
 GridTwoColumns.propTypes = {
   title: P.string.isRequired,
   text: P.string.isRequired,
-  srcImg: P.string.isRequired,
   background: P.bool,
+  image: P.object.isRequired,
 };

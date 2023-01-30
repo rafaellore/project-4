@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-
 import { mapData } from '../api/map-data';
-
-import config from '../config/';
+import Home from '../templates/Home';
 
 export default function Index({ data }) {
-  return <h1>{data}</h1>;
+  console.log(data);
+
+  return <Home data={data} />;
 }
 
 Index.propTypes = {
@@ -13,13 +13,16 @@ Index.propTypes = {
 };
 
 export const getStaticProps = async () => {
-  const raw = await fetch(
-    config.url + 'pages?populate=deep&pagination[pageSize]=1&sort[0]=id:desc',
+  const raw = await await fetch(
+    `https://strapi-test-mqjh.onrender.com/api/pages?populate=deep&pagination[pageSize]=1&sort[0]=id:desc`,
   );
+  const json = await raw.json();
+  const { attributes } = json.data[0];
 
-  const json = raw.json();
+  console.log(json);
+  const data = mapData([attributes]);
 
-  const data = mapData(json);
+  console.log(data);
 
   return {
     props: {

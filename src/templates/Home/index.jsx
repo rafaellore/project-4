@@ -1,24 +1,14 @@
 import P from 'prop-types';
 import Head from 'next/head';
 
-import { useEffect, useRef, useState } from 'react';
-
-import { mapData } from '../../api/map-data';
-
 import { GridTwoColumns } from '../../components/GridTwoColumns';
 import { GridContent } from '../../components/GridContent';
 import { GridText } from '../../components/GridText';
 import { GridImage } from '../../components/GridImage';
 
 import { Base } from '../Base';
-import { PageNotFound } from '../NotFound';
-import { Loading } from '../Loading';
 
 function Home({ data }) {
-  if (!data || !data.length) {
-    return <PageNotFound />;
-  }
-
   const { menu, sections, footerHtml, slug, title } = data[0];
   const { links, text, link, srcImg } = menu;
 
@@ -32,8 +22,6 @@ function Home({ data }) {
         {sections.map((section = {}, index) => {
           const { component, __component } = section;
           const key = `${slug}-${index}`;
-
-          console.log(section);
 
           if (
             component === 'section.sections-two-columns' ||

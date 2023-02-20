@@ -1,4 +1,4 @@
-import config from '../config';
+import { config } from './config';
 import { mapData } from './map-data';
 
 export const loadPages = async (slug = '') => {
@@ -7,7 +7,9 @@ export const loadPages = async (slug = '') => {
 
   const raw = await fetch(url);
   const json = await raw.json();
-  const data = mapData(json);
 
+  const { attributes } = json.data[0];
+
+  const data = mapData([attributes]);
   return data;
 };

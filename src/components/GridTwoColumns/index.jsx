@@ -4,12 +4,20 @@ import { SectionBackground } from '../SectionBackground';
 import { Heading } from '../Heading';
 import { Text } from '../Text';
 
-export const GridTwoColumns = ({ title, text, image, background = false }) => {
+export const GridTwoColumns = ({
+  title,
+  text,
+  image,
+  sectionId,
+  background = false,
+}) => {
   const { data } = image;
+
+  console.log(sectionId);
 
   return (
     <SectionBackground background={background}>
-      <Styled.Container background={background}>
+      <Styled.Container background={background} id={sectionId?.trim()}>
         <Styled.TextContainer>
           <Heading uppercase colorDark={!background} as="h2">
             {title}

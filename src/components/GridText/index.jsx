@@ -9,11 +9,12 @@ export const GridText = ({
   description,
   grid,
   background = false,
-  sectionId = '',
+  sectionId,
 }) => {
+  console.log(sectionId);
   return (
     <SectionBackground background={background} sectionId={sectionId}>
-      <Styled.Container>
+      <Styled.Container id={sectionId?.trim()}>
         <Heading size="huge" uppercase colorDark={!background} as="h2">
           {title}
         </Heading>

@@ -20,26 +20,32 @@ function Home({ data }) {
         logoData={{ text, link, srcImg }}
       >
         {sections.map((section = {}, index) => {
-          const { component, __component } = section;
+          const { component, __component, sectionId } = section;
           const key = `${slug}-${index}`;
 
           if (
             component === 'section.sections-two-columns' ||
             __component === 'section.sections-two-columns'
           ) {
-            return <GridTwoColumns key={key} {...section} />;
+            return (
+              <GridTwoColumns
+                key={key}
+                sectionId={section.metadata.section_id}
+                {...section}
+              />
+            );
           }
 
           if (component === 'section.section-content') {
-            return <GridContent key={key} {...section} />;
+            return <GridContent key={key} sectionId={sectionId} {...section} />;
           }
 
           if (component === 'section.section-grid-text') {
-            return <GridText key={key} {...section} />;
+            return <GridText key={key} sectionId={sectionId} {...section} />;
           }
 
           if (component === 'section.section-grid-image') {
-            return <GridImage key={key} {...section} />;
+            return <GridImage key={key} sectionId={sectionId} {...section} />;
           }
         })}
       </Base>

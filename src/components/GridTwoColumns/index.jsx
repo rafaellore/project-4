@@ -13,8 +13,6 @@ export const GridTwoColumns = ({
 }) => {
   const { data } = image;
 
-  console.log(sectionId);
-
   return (
     <SectionBackground background={background}>
       <Styled.Container background={background} id={sectionId?.trim()}>

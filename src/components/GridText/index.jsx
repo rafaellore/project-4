@@ -11,7 +11,6 @@ export const GridText = ({
   background = false,
   sectionId,
 }) => {
-  console.log(sectionId);
   return (
     <SectionBackground background={background} sectionId={sectionId}>
       <Styled.Container id={sectionId?.trim()}>

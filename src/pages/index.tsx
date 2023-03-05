@@ -1,16 +1,16 @@
-import PropTypes from 'prop-types';
 import { loadPages } from '../api/load-pages';
 import Home from '../templates/Home';
+import { GetStaticProps } from 'next';
 
-export default function Index({ data }) {
+export type IndexProps = {
+  data: [];
+};
+
+export default function Index({ data = null }: IndexProps) {
   return <Home data={data} />;
 }
 
-Index.propTypes = {
-  data: PropTypes.object.isRequired,
-};
-
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps<IndexProps> = async () => {
   let data = null;
 
   try {

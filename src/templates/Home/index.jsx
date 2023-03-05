@@ -1,5 +1,4 @@
 import P from 'prop-types';
-import Head from 'next/head';
 
 import { GridTwoColumns } from '../../components/GridTwoColumns';
 import { GridContent } from '../../components/GridContent';
@@ -9,7 +8,7 @@ import { GridImage } from '../../components/GridImage';
 import { Base } from '../Base';
 
 function Home({ data }) {
-  const { menu, sections, footerHtml, slug, title } = data[0];
+  const { menu, sections, footerHtml, slug } = data[0];
   const { links, text, link, srcImg } = menu;
 
   if (sections.length > 0)

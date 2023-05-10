@@ -2,12 +2,16 @@ import styled, { css } from 'styled-components';
 import { Container as SectionContainer } from '../SectionContainer/styles';
 import { Title as Heading } from '../Heading/styles';
 
+type MenuVisible = {
+  visible?: boolean;
+};
+
 const menuVisible = () => css`
   visibility: visible;
   opacity: 1;
 `;
 
-export const Container = styled.div`
+export const Container = styled.div<MenuVisible>`
   ${({ theme, visible }) => css`
     position: fixed;
     z-index: 5;
@@ -71,7 +75,7 @@ export const MenuContainer = styled.div`
   `}
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<MenuVisible>`
   ${({ theme, visible }) => css`
     z-index: 6;
     position: fixed;

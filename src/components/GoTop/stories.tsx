@@ -1,3 +1,4 @@
+import { Meta } from '@storybook/react/types-6-0';
 import { GoTop } from '.';
 
 export default {
@@ -9,7 +10,7 @@ export default {
   argTypes: {
     children: { type: 'string' },
   },
-};
+} as Meta;
 
 export const Template = (args) => {
   return (

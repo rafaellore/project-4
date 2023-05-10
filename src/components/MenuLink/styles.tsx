@@ -9,14 +9,14 @@ export const Container = styled.a`
     position: relative;
 
     &::after {
-      content:'';
+      content: '';
       position: absolute;
       bottom: 7.5px;
       left: 50%;
       width: 0;
       height: 0.2rem;
       background: ${theme.colors.secondaryColor};
-      transition: all 0.3s ease-in-out ;
+      transition: all 0.3s ease-in-out;
     }
 
     &:hover::after {

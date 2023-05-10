@@ -1,3 +1,5 @@
+import { MenuLinkProps } from '../MenuLink';
+
 export const mock = [
   {
     children: 'Link 1',
@@ -49,4 +51,4 @@ export const mock = [
     link: '#target10',
     newTab: false,
   },
-];
+] as MenuLinkProps[];

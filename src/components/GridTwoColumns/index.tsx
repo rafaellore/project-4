@@ -1,21 +1,26 @@
-import P from 'prop-types';
 import * as Styled from './styles';
 import { SectionBackground } from '../SectionBackground';
 import { Heading } from '../Heading';
 import { Text } from '../Text';
 
+export type GridTwoColumnsProps = {
+  title: string;
+  text: string;
+  srcImg: string;
+  background?: boolean;
+  sectionId?: string;
+};
+
 export const GridTwoColumns = ({
   title,
   text,
-  image,
-  sectionId,
+  srcImg,
   background = false,
-}) => {
-  const { data } = image;
-
+  sectionId = '',
+}: GridTwoColumnsProps) => {
   return (
-    <SectionBackground background={background}>
-      <Styled.Container background={background} id={sectionId?.trim()}>
+    <SectionBackground background={background} sectionId={sectionId}>
+      <Styled.Container>
         <Styled.TextContainer>
           <Heading uppercase colorDark={!background} as="h2">
             {title}
@@ -23,16 +28,9 @@ export const GridTwoColumns = ({
           <Text>{text}</Text>
         </Styled.TextContainer>
         <Styled.ImageContainer>
-          <Styled.Image src={data?.attributes?.url} alt={title} />
+          <Styled.Image src={srcImg} alt={title} />
         </Styled.ImageContainer>
       </Styled.Container>
     </SectionBackground>
   );
-};
-
-GridTwoColumns.propTypes = {
-  title: P.string.isRequired,
-  text: P.string.isRequired,
-  background: P.bool,
-  image: P.object.isRequired,
 };

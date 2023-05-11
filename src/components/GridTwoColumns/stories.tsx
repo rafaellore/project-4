@@ -1,5 +1,7 @@
-import { GridTwoColumns } from '.';
-import { mock } from './mock';
+import { Story } from '@storybook/react/types-6-0';
+import { GridTwoColumns, GridTwoColumnsProps } from '.';
+
+import mock from './mock';
 
 export default {
   title: 'GridTwoColumns',
@@ -10,7 +12,7 @@ export default {
   },
 };
 
-export const Template = (args) => {
+export const Template: Story<GridTwoColumnsProps> = (args) => {
   return (
     <div>
       <GridTwoColumns {...args} />

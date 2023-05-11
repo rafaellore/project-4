@@ -2,6 +2,7 @@ import { mock } from '../../components/NavLinks/mock';
 
 import { mock as gridMock } from '../../components/GridText/mock';
 import { GridText } from '../../components/GridText';
+import { BaseProps } from '.';
 
 export const baseMock = {
   children: (
@@ -20,4 +21,4 @@ export const baseMock = {
     link: '#',
   },
   footerHtml: '<p>Teste de footer</p>',
-};
+} as BaseProps;

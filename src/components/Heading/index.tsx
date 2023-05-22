@@ -1,4 +1,3 @@
-import P from 'prop-types';
 import React from 'react';
 import * as Styled from './styles';
 

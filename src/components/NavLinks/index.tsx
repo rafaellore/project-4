@@ -1,4 +1,3 @@
-import P from 'prop-types';
 import * as Styled from './styles';
 import { MenuLink, MenuLinkProps } from '../MenuLink';
 

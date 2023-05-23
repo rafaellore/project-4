@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 
-import config from './config';
+import { config } from './config';
 import { loadPages } from './load-pages';
 import * as mapDataModule from './map-data';
 

@@ -14,7 +14,7 @@ export type PageData = {
   title: string;
   slug: string;
   footerHtml: string;
-  menu: LogoLinkProps & { links: MenuLinkProps[] };
+  menu: LogoLinkProps & { links: MenuLinkProps[]; newTab: boolean };
   sections: SectionProps[];
 };
 

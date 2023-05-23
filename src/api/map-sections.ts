@@ -1,4 +1,10 @@
-export const mapSections = (sections = []) => {
+import { GridContentProps } from '../components/GridContent';
+import { GridImageProps } from '../components/GridImage';
+import { GridTextProps } from '../components/GridText';
+import { GridTwoColumnsProps } from '../components/GridTwoColumns';
+import { SectionProps } from '../templates/Home';
+
+export const mapSections = (sections = []): SectionProps[] => {
   return sections.map((section) => {
     if (section.__component === 'section.section-two-columns') {
       return mapSectionTwoColumns(section);
@@ -22,7 +28,9 @@ export const mapSections = (sections = []) => {
   });
 };
 
-export const mapSectionTwoColumns = (section = {}) => {
+export const mapSectionTwoColumns = (
+  section = {} as any,
+): GridTwoColumnsProps => {
   const {
     __component: component = '',
     title = '',
@@ -42,7 +50,7 @@ export const mapSectionTwoColumns = (section = {}) => {
   };
 };
 
-export const mapSectionContent = (section = {}) => {
+export const mapSectionContent = (section = {} as any): GridContentProps => {
   const {
     __component: component = '',
     title = '',
@@ -59,7 +67,7 @@ export const mapSectionContent = (section = {}) => {
   };
 };
 
-export const mapTextGrid = (section = {}) => {
+export const mapTextGrid = (section = {} as any): GridTextProps => {
   const {
     title = '',
     description = '',
@@ -83,7 +91,7 @@ export const mapTextGrid = (section = {}) => {
   };
 };
 
-export const mapImageGrid = (section = {}) => {
+export const mapImageGrid = (section = {} as any): GridImageProps => {
   const {
     title = '',
     description = '',

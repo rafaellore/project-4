@@ -16,7 +16,7 @@ describe('<Menu />', () => {
     );
     expect(screen.getByRole('heading', { name: 'Logo' })).toBeInTheDocument();
     expect(
-      screen.getByRole('navigation', { name: 'Main menu' }),
+      screen.getByRole('navigation', { name: 'main menu' }),
     ).toBeInTheDocument();
 
     expect(container).toMatchSnapshot();
@@ -54,7 +54,7 @@ describe('<Menu />', () => {
   it('should not render links', () => {
     const { container } = renderTheme(<Menu logoData={logoData} />);
     expect(
-      screen.queryByRole('navigation', { name: 'Main menu' }).firstChild,
+      screen.queryByRole('navigation', { name: 'main menu' }).firstChild,
     ).not.toBeInTheDocument();
     expect(container).toMatchSnapshot();
   });

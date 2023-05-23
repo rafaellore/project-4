@@ -72,6 +72,7 @@ exports[`<GridTwoColumns /> should render 1`] = `
 <div>
   <div
     class="c0"
+    id=""
   >
     <div
       class="c1"
@@ -99,6 +100,7 @@ exports[`<GridTwoColumns /> should render 1`] = `
           <img
             alt="Grid two columns"
             class="c7"
+            src="assets/images/javascript.svg"
           />
         </div>
       </div>
